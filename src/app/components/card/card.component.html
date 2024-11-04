@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+      <div class="icon" [ngClass]="isActive ? 'green' : 'red'"></div>
+      <input 
+        type="text" 
+        [ngClass]="{'invalid': !isLabelValid}" 
+        [value]="label"
+        placeholder="Server Label"
+      />
+    </div>
+    <div class="card-body">
+      <p>Status: <span [ngClass]="isActive ? 'active' : 'inactive'">{{ isActive ? 'Active' : 'Inactive' }}</span></p>
+      <button (click)="emitToggle()">
+        {{ isActive ? 'Deactivate' : 'Activate' }}
+      </button>
+    </div>
+  </div>
+  

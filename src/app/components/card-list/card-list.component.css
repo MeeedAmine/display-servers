@@ -1,0 +1,25 @@
+.server-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  
+  .server-card-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .server-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .server-card .icon,
+    .server-card p {
+      display: none;
+    }
+  }
+  

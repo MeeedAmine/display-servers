@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+}
+  
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,9 @@
+<div class="server-list">
+    <div *ngFor="let server of servers" class="server-card-container">
+      <app-card
+        [label]="server.label" 
+        [isActive]="server.active" 
+        (toggleStatus)="toggleStatus(server)"
+      ></app-card>
+    </div>
+  </div>
