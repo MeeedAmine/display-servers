@@ -22,4 +22,63 @@
       display: none;
     }
   }
-  
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.filters input[type="text"],
+.filters select {
+  flex-grow: 1;
+}
+.filters input[type="text"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.filters input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.5);
+}
+
+.filters select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.filters select:focus {
+  border-color: #007bff;
+  box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.5);
+}  
+
+.add-card-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.add-card-button:hover {
+  background-color: #218838;
+}

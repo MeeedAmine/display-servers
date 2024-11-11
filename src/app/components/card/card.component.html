@@ -3,14 +3,21 @@
       <div class="icon" [ngClass]="isActive ? 'green' : 'red'"></div>
       <input 
         type="text" 
-        [ngClass]="{'invalid': !isLabelValid}" 
-        [value]="label"
-        placeholder="Server Label"
+        [ngClass]="{'invalid': labelInput.invalid && labelInput.dirty}" 
+        [(ngModel)]="label"
+        #labelInput="ngModel"
+        minlength="5"
+        required
+        (ngModelChange)="onLabelChange(label)"
+        placeholder="Enter label (min 5 characters)"
       />
     </div>
+    @if (labelInput.invalid && labelInput.dirty) {
+      <p class="label-invalid">Label invalid, min 5 charachters</p>
+    }
     <div class="card-body">
       <p>Status: <span [ngClass]="isActive ? 'active' : 'inactive'">{{ isActive ? 'Active' : 'Inactive' }}</span></p>
-      <button (click)="emitToggle()">
+      <button (click)="toggleStatus()">
         {{ isActive ? 'Deactivate' : 'Activate' }}
       </button>
     </div>

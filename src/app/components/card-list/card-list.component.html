@@ -1,9 +1,24 @@
+<div class="filters">
+    <input
+      type="text"
+      placeholder="Filter by label"
+      [(ngModel)]="labelFilter"
+      (input)="applyFilters()" />
+    
+    <select [(ngModel)]="statusFilter" (change)="applyFilters()">
+      <option value="all">All Statuses</option>
+      <option value="active">Active</option>
+      <option value="inactive">Inactive</option>
+    </select>
+</div>
+<button class="add-card-button" (click)="addNewServer()">Add New Card</button>
 <div class="server-list">
-    <div *ngFor="let server of servers" class="server-card-container">
-      <app-card
-        [label]="server.label" 
-        [isActive]="server.active" 
-        (toggleStatus)="toggleStatus(server)"
-      ></app-card>
-    </div>
-  </div>
+    @for (server of filteredServes; track $index) {
+        <app-card
+            class="server-card-container"
+            [label]="server.label" 
+            [isActive]="server.active" 
+            (update)="onServerUpdate($index, $event)"
+        ></app-card>
+    }
+</div>

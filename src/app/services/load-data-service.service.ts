@@ -16,7 +16,10 @@ export class LoadDataService {
   jsonData: any = (jsonData as any).default;
 
   loadServers(): Observable<Server[]> {
-    return of(jsonData).pipe(
+
+    const savedServers = localStorage.getItem('servers');
+
+    return savedServers ? of(JSON.parse(savedServers)) : of(jsonData).pipe(
       map(data => this.extractServers(data))
     );
   }
@@ -40,5 +43,9 @@ export class LoadDataService {
 
     findServers(data);
     return servers;
+  }
+
+  saveServers(servers: Server[]) {
+    localStorage.setItem('servers', JSON.stringify(servers));
   }
 }
