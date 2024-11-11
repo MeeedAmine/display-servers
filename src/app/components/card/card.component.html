@@ -3,7 +3,7 @@
       <div class="icon" [ngClass]="isActive ? 'green' : 'red'"></div>
       <input 
         type="text" 
-        [ngClass]="{'invalid': labelInput.invalid && labelInput.dirty}" 
+        [ngClass]="{'invalid': labelInput.invalid }" 
         [(ngModel)]="label"
         #labelInput="ngModel"
         minlength="5"
@@ -12,7 +12,7 @@
         placeholder="Enter label (min 5 characters)"
       />
     </div>
-    @if (labelInput.invalid && labelInput.dirty) {
+    @if (labelInput.invalid) {
       <p class="label-invalid">Label invalid, min 5 charachters</p>
     }
     <div class="card-body">
